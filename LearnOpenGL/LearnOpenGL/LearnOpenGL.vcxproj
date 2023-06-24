@@ -79,8 +79,8 @@
     <LibraryPath>F:\D12GameEngineProgramming\LearnOpenGL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>F:\D12GameEngineProgramming\LearnOpenGL\include;$(IncludePath)</IncludePath>
-    <LibraryPath>F:\D12GameEngineProgramming\LearnOpenGL\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>F:\Learning_OpenGL\LearnOpenGL\include;$(IncludePath)</IncludePath>
+    <LibraryPath>F:\Learning_OpenGL\LearnOpenGL\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>F:\D12GameEngineProgramming\LearnOpenGL\include;$(IncludePath)</IncludePath>
@@ -122,7 +122,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>F:\D12GameEngineProgramming\LearnOpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>F:\Learning_OpenGL\LearnOpenGL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
