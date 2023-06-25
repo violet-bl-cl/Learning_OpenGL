@@ -1,4 +1,10 @@
 ﻿  main.cpp
-F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(344,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(345,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(69,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(70,11): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(75,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(76,16): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(77,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(78,10): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(397,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+F:\Learning_OpenGL\LearnOpenGL\Camera\main.cpp(398,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
   Camera.vcxproj -> F:\Learning_OpenGL\LearnOpenGL\x64\Debug\Camera.exe

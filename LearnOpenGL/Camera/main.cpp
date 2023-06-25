@@ -13,7 +13,9 @@ using namespace std;
 using namespace glm;
 //core functions
 void frame_buffer_size_callback(GLFWwindow* window, int width, int height);
+void mouse_callback(GLFWwindow* window, double xPos, double yPos);
 void processInput(GLFWwindow* window);
+void scroll_callback(GLFWwindow* window, double xOffset, double yOffset);
 
 void frame_buffer_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
@@ -26,6 +28,14 @@ const float cameraSpeed = 2.5f;
 
 float deltaTime = 0.0f; // time between current frame and last frame.
 float lastFrame = 0.0f; //Time of last frame. 
+
+float lastX = 400, lastY = 300;
+bool firstMouse = true;
+float yawAngle = -90.0f;
+float pitchAngle = 0.0f;
+float fovAngle = 45.0f;
+
+
 
 void processInput(GLFWwindow* window) {
 	//setting up the default camera positions.
@@ -53,10 +63,51 @@ void processInput(GLFWwindow* window) {
 	}
 
 }
+void mouse_callback(GLFWwindow* window, double xPos, double yPos) {
+
+	if (firstMouse) {
+		lastY = yPos;
+		lastX = xPos;
+		firstMouse = false;
+	}
 
 
+	float xOffset = xPos - lastX;
+	float yOffset = lastY - yPos; //reversed since y-coordinates range from bottom to top.
+	lastX = xPos;
+	lastY = yPos;
 
+	const float senstivity = 0.1f;
+	xOffset *= senstivity;
+	yOffset *= senstivity;
 
+	yawAngle += xOffset;
+	pitchAngle += yOffset;
+
+	if (pitchAngle > 89.0f) {
+		pitchAngle = 89.0f;
+	}
+	if (pitchAngle < -89.0f) {
+		pitchAngle = -89.0f;
+	}
+
+	vec3 direction;
+	direction.x = cos(radians(yawAngle)) * cos(radians(pitchAngle));
+	direction.y = sin(radians(pitchAngle));
+	direction.z = sin(radians(yawAngle)) * cos(radians(pitchAngle));
+	cameraFront = normalize(direction);
+
+}
+
+void scroll_callback(GLFWwindow* window, double xOffset, double yOffset) {
+	fovAngle -= (float)yOffset;
+	if (fovAngle < 1.0f) {
+		fovAngle = 1.0f;
+	}
+	if (fovAngle > 45.0f) {
+		fovAngle = 45.0f;
+	}
+}
 
 int main(void) {
 
@@ -76,8 +127,10 @@ int main(void) {
 		return -1;
 	}
 	glfwMakeContextCurrent(window);
+	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 	glfwSetFramebufferSizeCallback(window, frame_buffer_size_callback);
-
+	glfwSetCursorPosCallback(window, mouse_callback);
+	glfwSetScrollCallback(window, scroll_callback);
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		cout << "Failed to intilaize GALD" << endl;
 		glfwTerminate();
@@ -345,7 +398,8 @@ int main(void) {
 		float camZ = cos(glfwGetTime()) * radius;
 	//	view = lookAt(vec3(camX, 0.0f, camZ), vec3(0.0f, 0.0f, 0.0f), vec3(0.0f, 1.0f, 0.0f));
 		view = lookAt(cameraPos, cameraPos + cameraFront, cameraUp);
-		projection = perspective(radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+	//	projection = perspective(radians(45.0f), 800.0f / 600.0f, 0.1f, 100.0f);
+		projection = perspective(radians(fovAngle), 800.0f / 600.0f, 0.1f, 100.0f);
 
 		
 		//Updating Feature

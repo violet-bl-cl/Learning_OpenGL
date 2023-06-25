@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Camera",
     "\\LearnOpenGL",
     "\\Shader"
   ],
-  "SelectedNode": "\\Shader\\shader.vs",
+  "SelectedNode": "\\Camera\\main.cpp",
   "PreviewInSolutionExplorer": false
 }
