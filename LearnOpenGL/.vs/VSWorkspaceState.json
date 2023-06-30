@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\AdvancedLighting",
     "\\Camera",
+    "\\DepthTesting",
+    "\\GammaCorrection",
     "\\LearnOpenGL",
+    "\\LightCasters",
+    "\\Model",
+    "\\MultipleLightsWithGUI",
     "\\Shader"
   ],
-  "SelectedNode": "\\Camera\\main.cpp",
+  "SelectedNode": "\\LearnOpenGL.sln",
   "PreviewInSolutionExplorer": false
 }

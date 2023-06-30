@@ -1,1 +1,6 @@
-﻿  Shader.vcxproj -> F:\Learning_OpenGL\LearnOpenGL\x64\Debug\Shader.exe
+﻿  glad.c
+  main.cpp
+  Shader.cpp
+F:\Learning_OpenGL\LearnOpenGL\Shader\Shader.cpp(97,62): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  Generating Code...
+  Shader.vcxproj -> F:\Learning_OpenGL\LearnOpenGL\x64\Debug\Shader.exe

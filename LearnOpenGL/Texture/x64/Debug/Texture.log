@@ -1,2 +1,6 @@
-﻿  main.cpp
+﻿  glad.c
+  main.cpp
+  Shader.cpp
+F:\Learning_OpenGL\LearnOpenGL\Texture\Shader.cpp(97,62): warning C4244: 'argument': conversion from 'float' to 'GLint', possible loss of data
+  Generating Code...
   Texture.vcxproj -> F:\Learning_OpenGL\LearnOpenGL\x64\Debug\Texture.exe
